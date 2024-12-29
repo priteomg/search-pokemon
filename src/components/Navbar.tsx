@@ -13,13 +13,15 @@ export const Navbar = () => {
     router.push("/");
   };
 
-  const handleKey = (event) => {
+  const handleKey = (event: { key: string }) => {
     if (searchText.trim() && event.key === "Enter") {
       router.push(`/?search=${searchText}`);
     }
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
     setSearchText(event.target.value);
   };
 
