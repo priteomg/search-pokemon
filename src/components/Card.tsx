@@ -1,3 +1,4 @@
+"use client";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { Pokemon } from "../app/pokemon.interface";
@@ -25,10 +26,7 @@ const PokemonCard = ({ data }: Props) => {
 
       <div className="card-body p-5 gap-3">
         <div className="flex justify-between items-end">
-          <h2 className="card-title">
-            {data.name}
-            {/* <div className="badge badge-secondary">NEW</div> */}
-          </h2>
+          <h2 className="card-title">{data.name}</h2>
           <h2>{data.maxHP} HP</h2>
         </div>
 
