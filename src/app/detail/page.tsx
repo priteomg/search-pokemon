@@ -3,8 +3,9 @@ import { gql, useSuspenseQuery, TypedDocumentNode } from "@apollo/client";
 
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { Suspense } from "react";
 import { PokemonDetail } from "../pokemon.interface";
+import Loading from "@/components/Loading";
 
 function Detail() {
   const router = useRouter();
@@ -69,7 +70,7 @@ function Detail() {
   };
 
   return (
-    <div>
+    <Suspense fallback={<Loading />}>
       <div className="max-w-5xl mx-auto my-2">
         <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-2">
           <div className="bg-white border rounded-lg border-white overflow-hidden  col-span-1 flex justify-center">
@@ -227,7 +228,7 @@ function Detail() {
           </div>
         </div>
       </div>
-    </div>
+    </Suspense>
   );
 }
 
