@@ -7,8 +7,6 @@ export const Navbar = () => {
 
   const [searchText, setSearchText] = useState<string>("");
   const onClickHome = () => {
-    // redirect("/");
-    // router.prefetch("/");
     setSearchText("");
     router.push("/");
   };
